@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Twenty Odd Labs</title>
+    <style>
+        :root {
+            --bg-start: #1a1a2e;
+            --bg-mid: #16213e;
+            --bg-end: #0f3460;
+            --text: #ffffff;
+            --muted: rgba(255, 255, 255, 0.65);
+            --border: rgba(255, 255, 255, 0.12);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(160deg, var(--bg-start) 0%, var(--bg-mid) 50%, var(--bg-end) 100%);
+            min-height: 100vh;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: var(--text); }
+
+        .content {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+        }
+
+        h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.4rem; }
+
+        .updated {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 2.5rem 0 0.75rem;
+        }
+
+        p, li {
+            font-size: 0.97rem;
+            color: var(--muted);
+            line-height: 1.75;
+            margin-bottom: 0.75rem;
+        }
+
+        ul { padding-left: 1.5rem; }
+        li { margin-bottom: 0.4rem; }
+
+        a { color: var(--text); }
+
+        footer {
+            border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        footer a { color: var(--muted); text-decoration: underline; }
+        footer a:hover { color: var(--text); }
+
+        .footer-links { margin-top: 0.5rem; display: flex; justify-content: center; gap: 1.5rem; }
+
+        @media (max-width: 600px) {
+            header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            nav a:first-child { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a class="logo" href="index.html">Twenty Odd Labs</a>
+    <nav>
+        <a href="support.html">Support</a>
+        <a href="mailto:founder@twentyoddlabs.com">Contact</a>
+    </nav>
+</header>
+
+<div class="content">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: February 2026</p>
+
+    <h2>Overview</h2>
+    <p>Twenty Odd Labs LLC ("we," "our," or "us") builds mobile applications for iOS. This policy describes how we collect, use, and protect your information across our apps. App-specific practices are noted where they differ.</p>
+
+    <h2>Data We Collect</h2>
+    <p>The data we collect depends on which app you use. Across our apps, we may collect:</p>
+    <ul>
+        <li>User-generated content (such as photos or recordings) stored securely and accessible only to intended recipients</li>
+        <li>Optional email addresses for account recovery</li>
+        <li>Push notification tokens for delivering in-app alerts</li>
+        <li>Anonymous crash reports and diagnostics through Firebase for bug detection and app stability</li>
+    </ul>
+
+    <h2>How We Use Your Data</h2>
+    <p>We use collected information only to operate and improve our apps:</p>
+    <ul>
+        <li>To deliver content and notifications between users within your group</li>
+        <li>To enable account recovery when reinstalling an app</li>
+        <li>To fix bugs and improve performance through anonymous diagnostics</li>
+    </ul>
+    <p>We do not sell, share, or use your data for advertising.</p>
+
+    <h2>Data Retention</h2>
+    <p>Retention varies by app and subscription status. In Grandma Wants Pics, free plan photos are removed after 30 days; premium subscribers retain photos for the duration of their subscription. Users can delete their content or their entire account at any time from within the app.</p>
+
+    <h2>Third-Party Services</h2>
+    <p>Our apps use Firebase (Google) for storage, authentication, and crash reporting. Firebase's privacy practices are governed by Google's Privacy Policy.</p>
+
+    <h2>Children's Privacy</h2>
+    <p>Our apps are designed for adult users. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us at <a href="mailto:privacy@twentyoddlabs.com">privacy@twentyoddlabs.com</a> and we will promptly delete it.</p>
+
+    <h2>Your Rights</h2>
+    <p>You may request access to, correction of, or deletion of your personal data at any time by contacting us. Account deletion is also available directly within each app.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>We may update this policy from time to time. Continued use of our apps after changes are posted constitutes acceptance of the updated policy.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about privacy? Reach us at <a href="mailto:privacy@twentyoddlabs.com">privacy@twentyoddlabs.com</a>.</p>
+</div>
+
+<footer>
+    <div>&copy; 2026 Twenty Odd Labs LLC. All rights reserved.</div>
+    <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="support.html">Support</a>
+    </div>
+</footer>
+
+</body>
+</html>

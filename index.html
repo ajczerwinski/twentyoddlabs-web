@@ -3,39 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Twenty Odd Labs — a small software studio with a long list of ideas and the discipline to ship them.">
     <title>Twenty Odd Labs</title>
     <style>
+        :root {
+            --bg-start: #1a1a2e;
+            --bg-mid: #16213e;
+            --bg-end: #0f3460;
+            --text: #ffffff;
+            --muted: rgba(255, 255, 255, 0.65);
+            --card: rgba(255, 255, 255, 0.06);
+            --border: rgba(255, 255, 255, 0.12);
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            background: linear-gradient(160deg, var(--bg-start) 0%, var(--bg-mid) 50%, var(--bg-end) 100%);
             min-height: 100vh;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo { font-size: 1.05rem; font-weight: 600; letter-spacing: 0.02em; }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: var(--text); }
+
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .hero h1 { font-size: 3rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
+
+        .hero .tagline {
+            font-size: 1.2rem;
+            color: var(--muted);
+            max-width: 520px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .content { max-width: 820px; margin: 0 auto; padding: 0 2rem; }
+
+        section { padding: 3rem 0 4rem; }
+
+        section h2 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+            margin-bottom: 1.75rem;
+        }
+
+        /* Featured app card */
+        .app-featured {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+        }
+
+        .app-featured-text { flex: 1; min-width: 0; }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            padding: 0.25rem 0.65rem;
+            border-radius: 999px;
+            margin-bottom: 0.9rem;
+        }
+
+        .badge-live { background: rgba(52, 199, 89, 0.15); color: #34c759; }
+        .badge-soon { background: rgba(255, 255, 255, 0.08); color: var(--muted); }
+
+        .app-featured h3 { font-size: 1.4rem; font-weight: 600; margin-bottom: 0.6rem; }
+
+        .app-desc {
+            font-size: 0.95rem;
+            color: var(--muted);
+            line-height: 1.65;
+            margin-bottom: 1.25rem;
+        }
+
+        .app-store-btn {
+            display: inline-flex;
+            align-items: center;
+            background: #000;
             color: #fff;
+            text-decoration: none;
+            padding: 0.55rem 1.1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: opacity 0.2s;
+            line-height: 1;
+        }
+
+        .app-store-btn:hover { opacity: 0.75; }
+
+        .btn-inner { display: flex; flex-direction: column; gap: 2px; }
+        .btn-label { font-size: 0.68rem; opacity: 0.75; }
+        .btn-name { font-size: 0.9rem; font-weight: 600; }
+
+        /* Screenshots */
+        .screenshots {
+            display: flex;
+            gap: 0.75rem;
+            flex-shrink: 0;
+            align-items: flex-start;
+        }
+
+        .screenshots img {
+            width: 115px;
+            border-radius: 14px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            display: block;
+        }
+
+        .screenshots img:nth-child(2) { margin-top: 1.5rem; }
+        .screenshots img:nth-child(3) { margin-top: 0.75rem; }
+
+        /* Coming soon card */
+        .app-soon {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.75rem;
+            max-width: 360px;
+        }
+
+        .app-soon h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.6rem; }
+
+        /* About */
+        .about p {
+            font-size: 1rem;
+            color: var(--muted);
+            line-height: 1.75;
+            margin-bottom: 1rem;
+            max-width: 640px;
+        }
+
+        .about a { color: var(--text); }
+
+        footer {
+            border-top: 1px solid var(--border);
             text-align: center;
             padding: 2rem;
+            font-size: 0.85rem;
+            color: var(--muted);
         }
-        .container { max-width: 520px; }
-        h1 { font-size: 2.2rem; margin-bottom: 0.75rem; }
-        .tagline { font-size: 1.15rem; opacity: 0.9; margin-bottom: 1.5rem; line-height: 1.5; }
-        .contact {
-            font-size: 0.95rem;
-            opacity: 0.7;
-            margin-top: 1rem;
-        }
-        .contact a {
-            color: #fff;
-            text-decoration: underline;
+
+        footer a { color: var(--muted); text-decoration: underline; }
+        footer a:hover { color: var(--text); }
+
+        .footer-links { margin-top: 0.5rem; display: flex; justify-content: center; gap: 1.5rem; }
+
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero { padding: 4rem 2rem 2rem; }
+            header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            nav a:first-child { margin-left: 0; }
+
+            .app-featured {
+                flex-direction: column;
+            }
+
+            .screenshots {
+                width: 100%;
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+            }
+
+            .screenshots img {
+                width: 100px;
+                margin-top: 0 !important;
+            }
+
+            .app-soon { max-width: 100%; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Twenty Odd Labs</h1>
-        <p class="tagline">We develop mobile applications and subscription-based software products focused on simple, user-friendly digital experiences.</p>
-        <p class="contact">Contact: <a href="mailto:founder@twentyoddlabs.com">founder@twentyoddlabs.com</a></p>
+
+<header>
+    <span class="logo">Twenty Odd Labs</span>
+    <nav>
+        <a href="support.html">Support</a>
+        <a href="mailto:founder@twentyoddlabs.com">Contact</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h1>Twenty Odd Labs</h1>
+    <p class="tagline">A small software studio with a long list of ideas and the discipline to ship them.</p>
+</div>
+
+<div class="content">
+
+    <section class="apps">
+        <h2>Our Apps</h2>
+
+        <div class="app-featured">
+            <div class="app-featured-text">
+                <div class="badge badge-live">Live</div>
+                <h3>Grandma Wants Pics</h3>
+                <p class="app-desc">Grandma taps one button. You get a reminder. She gets photos in seconds. Private photo sharing so simple, everyone in the family actually uses it.</p>
+                <a href="https://apps.apple.com/us/app/grandma-wants-pics/id6759213733" class="app-store-btn" target="_blank" rel="noopener">
+                    <div class="btn-inner">
+                        <span class="btn-label">Download on the</span>
+                        <span class="btn-name">App Store</span>
+                    </div>
+                </a>
+            </div>
+            <div class="screenshots">
+                <img src="images/gwp-1.png" alt="Grandma's simple one-button interface">
+                <img src="images/gwp-3.png" alt="Family gets an instant notification">
+                <img src="images/gwp-4.png" alt="Send photos in seconds">
+            </div>
+        </div>
+
+        <div class="app-soon">
+            <div class="badge badge-soon">Coming Soon</div>
+            <h3>Family Stories</h3>
+            <p class="app-desc">A place for the stories that matter. Record, collect, and listen to the voices of the people you love — before those stories are gone.</p>
+        </div>
+    </section>
+
+    <section class="about">
+        <h2>About</h2>
+        <p>Twenty Odd Labs is an independent software studio based in Washington State. We build across categories — from family apps and productivity tools to games and whatever earns the next spot on the list.</p>
+        <p>Every app we ship is small, deliberate, and designed to actually get used. The name is a goal: twenty-odd apps, made carefully, one at a time.</p>
+        <p>For questions, partnership inquiries, or feedback: <a href="mailto:founder@twentyoddlabs.com">founder@twentyoddlabs.com</a></p>
+    </section>
+
+</div>
+
+<footer>
+    <div>&copy; 2026 Twenty Odd Labs LLC. All rights reserved.</div>
+    <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="support.html">Support</a>
     </div>
+</footer>
+
 </body>
 </html>

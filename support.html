@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — Twenty Odd Labs</title>
+    <style>
+        :root {
+            --bg-start: #1a1a2e;
+            --bg-mid: #16213e;
+            --bg-end: #0f3460;
+            --text: #ffffff;
+            --muted: rgba(255, 255, 255, 0.65);
+            --card: rgba(255, 255, 255, 0.06);
+            --border: rgba(255, 255, 255, 0.12);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(160deg, var(--bg-start) 0%, var(--bg-mid) 50%, var(--bg-end) 100%);
+            min-height: 100vh;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: var(--text); }
+
+        .content {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+        }
+
+        h1 { font-size: 2rem; font-weight: 700; margin-bottom: 2rem; }
+
+        .contact-block {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-block p {
+            font-size: 0.97rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .contact-block a { color: var(--text); font-weight: 500; }
+
+        h2 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+            margin-bottom: 1.25rem;
+        }
+
+        .faq-item { margin-bottom: 2rem; }
+
+        .faq-item h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; }
+
+        .faq-item p {
+            font-size: 0.95rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        footer a { color: var(--muted); text-decoration: underline; }
+        footer a:hover { color: var(--text); }
+
+        .footer-links { margin-top: 0.5rem; display: flex; justify-content: center; gap: 1.5rem; }
+
+        @media (max-width: 600px) {
+            header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            nav a:first-child { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a class="logo" href="index.html">Twenty Odd Labs</a>
+    <nav>
+        <a href="support.html">Support</a>
+        <a href="mailto:founder@twentyoddlabs.com">Contact</a>
+    </nav>
+</header>
+
+<div class="content">
+    <h1>Support</h1>
+
+    <div class="contact-block">
+        <p>Need help with one of our apps? Email us at <a href="mailto:support@twentyoddlabs.com">support@twentyoddlabs.com</a> and we'll get back to you within 48 hours.</p>
+    </div>
+
+    <h2>Grandma Wants Pics — Common Questions</h2>
+
+    <div class="faq-item">
+        <h3>How do I invite family members?</h3>
+        <p>Tap the share button on your home screen to send an invite link. The recipient taps the link to join your family group.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>How do I send photos?</h3>
+        <p>Family members can tap "Send Pics" to choose photos from their library or take a new photo with the camera.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>What happens to my photos?</h3>
+        <p>Photos are stored securely and shared only with your family group. Free accounts retain photos for 30 days. Premium subscribers get unlimited photo retention.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>How do I delete my account?</h3>
+        <p>Account deletion is available directly within the app. Go to Settings and select "Delete Account." This will permanently remove your data from our servers.</p>
+    </div>
+
+</div>
+
+<footer>
+    <div>&copy; 2026 Twenty Odd Labs LLC. All rights reserved.</div>
+    <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="support.html">Support</a>
+    </div>
+</footer>
+
+</body>
+</html>
